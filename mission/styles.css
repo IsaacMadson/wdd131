@@ -11,11 +11,15 @@ body {
     margin-bottom: 2%;
 }
 main {
-   padding: 20px;
+   padding: 15%;
 }
 h2 {
     color: #006EB6;
     font-size: 15px;
+    border-bottom: 1px solid #c0bfbf;
+    display: inline-block; /* Makes the border fit the text width */
+    margin: 0 auto; /* Optional: Centers the h2 if needed */
+
 }
 header {
     text-align: center;
@@ -36,4 +40,11 @@ img {
     height: auto;
     padding-bottom: 10%;
     
+}
+
+.dark {
+    background-color: #333;
+    color: #fff;
+    border: #fff 1px solid;
+
 }
