@@ -18,7 +18,7 @@ h2 {
     font-size: 15px;
     border-bottom: 1px solid #c0bfbf;
     display: inline-block; /* Makes the border fit the text width */
-    margin: 0 auto; /* Optional: Centers the h2 if needed */
+
 
 }
 header {

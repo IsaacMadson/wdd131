@@ -1,17 +1,20 @@
-const themeSelector = document.querySelector("#theme");
+let theme = document.querySelector("select");
+let logo = document.querySelector("img");
+
+theme.addEventListener("change", changeTheme);
+
 function changeTheme() {
-// check to see what the current value of our select is.
-// The current value is conveniently found in themeSelector.value!
+    let current = theme.value;
+    if (current == "dark"){ 
+        document.body.className = 'dark';
+        logo.src = "byui-logo_white.png";
 
-// if the value is dark then:
-// add the dark class to the body
-// change the source of the logo img to point to the white logo.
-// otherwise
-// remove the dark class
-// make sure the logo src is the blue logo.
+    } else {
+        document.body.className = '';
+        logo.src = "byui-logo_blue.webp";
+    
+    }
+
+
+
 }
-
-// add an event listener to the themeSelector element here.
-// Use the changeTheme function as the event handler function.
-themeSelector.addEventListener('change', changeTheme);
-element.style.backgroundColor = 
