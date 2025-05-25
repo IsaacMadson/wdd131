@@ -1,0 +1,72 @@
+:root {
+  --gold: #EFC69B;
+  --red: #AF1B3F;
+  --dark: #473144;
+  --body-font: Helvetica, Arial, sans-serif;
+}
+header {
+    text-align: center;
+    font-family: var(--body-font);
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+nav {
+    justify-content: end;
+    justify-items: end;
+    border-top: var(--gold) solid 1.5px;
+    border-bottom: var(--gold) solid 1.5px;
+    
+}
+ul {
+    list-style: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+}
+li {
+    margin-right: 5rem;
+    font-family: var(--body-font);
+    font-size: 1.2rem;
+}
+main {
+    display: grid;
+    grid-template-columns: .5fr 2fr 1fr;
+    gap: 1rem;
+    padding: 2rem;
+}
+.book-meta {
+    grid-column: 1 / 2;
+    justify-items: end;
+}
+.book-details {
+    grid-column: 2 / 3;
+    font-family: var(--body-font);
+    border-left: var(--gold) solid 1.5px;
+    padding: 5%;
+}
+.book-details h2 {
+    color: var(--red);
+}
+.filter {
+    grid-column: 3/4;
+    margin: 0.5rem 0;
+    border: var(--gold) solid 1.5px;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+a {
+    text-decoration: none;
+    color: var(--red);
+}
+a:hover {
+    text-decoration: underline;
+    color: var(--gold);
+}
+.skiptocontent {
+    position:absolute;
+    top: -100px;   
+}
+.skiptocontent a:focus {
+    top: 0;
+}
