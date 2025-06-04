@@ -36,15 +36,26 @@ main {
 .book-meta {
     grid-column: 1 / 2;
     justify-items: end;
+    line-height: .5;
+    padding-top: 8%;
 }
+
+.meta-date {
+    font-family: var(--body-font);
+    color: var(--dark);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
 .book-details {
     grid-column: 2 / 3;
     font-family: var(--body-font);
     border-left: var(--gold) solid 1.5px;
-    padding: 5%;
+    padding-left: 1rem;
 }
 .book-details h2 {
     color: var(--red);
+    font-size: 2rem;
 }
 .filter {
     grid-column: 3/4;
@@ -54,6 +65,8 @@ main {
 img {
     width: 100%;
     height: auto;
+    justify-content: end;
+    justify-items: end;
 }
 a {
     text-decoration: none;
