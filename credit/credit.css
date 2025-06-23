@@ -1,0 +1,32 @@
+.i1 {
+    z-index: 1;
+    position: absolute;
+    top: 236px;
+    left: 76px;
+    width: 178px;
+    height: 24px;
+}
+.i2 {
+    z-index: 1;
+    position: absolute;
+    top: 171px;
+    left: 76px;
+    width: 300px;
+    height: 25px;
+}
+.i3 {
+    z-index: 1;
+    position: absolute;
+    top: 235px;
+    left: 277px;
+    width: 93px;
+    height: 25px;
+}
+.i4 {
+    z-index: 1;
+    position: absolute;
+    top: 269px;
+    left: 413px;
+    width: 57px;
+    height: 25px;
+}
