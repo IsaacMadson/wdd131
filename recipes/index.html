@@ -19,10 +19,7 @@
 
   <header>
     <img src="images/recipe-book.png" alt="Recipe Book Logo">
-    <h1>Delicious Recipes</h1>
-  </header>
-
-  <main>
+    <h1>Delicious Recipes</h1>    
     <section class="search-section">
       <form class="search-form">
         <label for="search-input" class="sr-only">Search Recipes</label>
@@ -30,12 +27,13 @@
         <button type="submit">Search</button>
       </form>
     </section>
+  </header>
 
-    <section class="recipes-grid">
+  <main>
       <article class="recipe-card">
-        <img src="images/lasagna.webp" alt="Classic Lasagna"> <h2>Classic Lasagna</h2>
-        <p class="description">A timeless Italian classic, this lasagna features rich meat sauce, creamy béchamel, and layers of tender pasta, baked to golden perfection.</p>
+        <img src="images/apple-crisp.jpg" alt="Classic Lasagna"> 
         <div class="recipe-meta">
+          <h2>Classic Lasagna</h2>
           <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
             <span aria-hidden="true" class="icon-star">⭐</span>
             <span aria-hidden="true" class="icon-star">⭐</span>
@@ -45,11 +43,10 @@
           </span>
           <p class="prep-time">Prep: 30 min</p>
           <p class="cook-time">Cook: 1 hr 15 min</p>
+          <p class="description">A timeless Italian classic, this lasagna features rich meat sauce, creamy béchamel, and layers of tender pasta, baked to golden perfection.</p>
+          <button class="view-recipe">View Recipe</button>
         </div>
-        <button class="view-recipe">View Recipe</button>
       </article>
-
-      </section>
   </main>
 
   <footer>
@@ -60,8 +57,8 @@
     </div>
     <p class="attribution">
       <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
+      &copy; 2025 Delicious Recipes. All rights reserved.
     </p>
-    <p>&copy; 2025 Delicious Recipes. All rights reserved.</p>
   </footer>
 
   <script src="recipes.js"></script>
