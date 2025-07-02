@@ -1,3 +1,106 @@
+function search() {
+
+    let hikeQuery = document.querySelector('#search').value;
+
+    let filteredRecipe = recipe.filter(function(recipe){
+        return ( 
+            hike.name.toLowerCase().includes(hikeQuery.toLowerCase()) ||
+            hike.description.toLowerCase().includes(hikeQuery.toLowerCase()) || 
+            hike.tags.find(tag => tag.toLowerCase().includes(hikeQuery.toLowerCase()))
+        );
+    })
+
+    console.log(filteredHikes);
+
+    function compareHikes(a,b) {
+    if (a.difficulty < b.difficulty) {
+        return -1;
+    } else if (a.difficulty > b.difficulty) {
+        return 1;
+    }
+    return 0;
+    }
+
+    let sortedHikes = filteredHikes.sort(compareHikes);
+
+    console.log(sortedHikes);
+
+    // clear out any previous content
+    hikeContainer.innerHTML = '';
+    // output onto screen
+    sortedHikes.forEach(function(recipe){
+		renderHike(recipe);
+	})
+
+}
+
+let hikeContainer = document.querySelector('#recipe-container');
+
+let button = document.querySelector('button');
+
+button.addEventListener('click', search);
+
+let randomNum = Math.floor(Math.random() * recipe.length);
+console.log(randomNum);
+
+function tagTemplate(tags) {
+    return tags.map((tag)=> `<button>${tag}</button>`).join(' ');
+}
+
+function difficultyTemplate(rating) {
+		let html = `<span
+	class="rating"
+	role="img"
+	aria-label="Rating: ${rating} out of 5"
+  > Difficulty: `
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        html += `<span aria-hidden="true" class="icon-boot"> 🥾</span>`
+      } else {
+        html += `<span aria-hidden="true" class="icon-empty">▫️</span> `
+      }			
+    }
+    html += `</span>`
+    return html
+  }
+
+function hikesTemplate(recipe) {
+    return `<div class="recipe-card">
+  <div class="recipe-content">
+    <h2>${recipe.name}</h2>
+    <div class="recipe-tags">
+      ${tagTemplate(recipe.tags)}
+    </div>
+    <p>${recipe.description}</p>
+    <p>${difficultyTemplate(recipe.difficulty)}</p>
+  </div>
+</div>`
+}
+
+function renderHike(recipe) {
+    let html = hikesTemplate(recipe);
+    hikeContainer.innerHTML += html
+}
+
+function init() {
+    renderHike(recipe[randomNum]);
+}
+
+init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const recipes = [
 	{
 		author: 'Provo High Culinary Students',
