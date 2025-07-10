@@ -1,0 +1,77 @@
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #6C757D;
+}
+
+
+
+
+/* Using "Calm & Professional" colors with grey for your interest calculator can create a very sophisticated and user-friendly experience. Here's a guide on where to apply those colors:
+
+Your Base: Grey Keys
+Since your numerical and basic operation keys (0-9, +, -, *, /) will be grey, these calm and professional colors will act as accents to highlight specific actions and provide visual hierarchy.
+
+Where to Use the Calm & Professional Colors:
+
+Primary Action Button (e.g., "Calculate"):
+
+Color Choice: Deep Teal (#008080) or Navy Blue (#000080)
+
+Why: This is the most important button on your calculator. Using a strong, yet calm, color like deep teal or navy blue will draw the user's eye to it without being jarring. These colors convey trust and reliability, which are great for a financial tool.
+
+Consideration: Ensure the text on this button (e.g., "Calculate") has excellent contrast against the chosen color. White or a very light grey text would work well.
+
+"Clear" or "Reset" Button:
+
+Color Choice: Burgundy (#800020) or Forest Green (#228B22)
+
+Why: These actions are important but not the primary goal. Burgundy can signal a "destructive" action (clearing data) in a sophisticated way, while forest green can suggest "starting fresh" or "resetting" in a natural, positive tone.
+
+Consideration: Don't make this button as prominent as the "Calculate" button. It should be easily findable but not compete for attention.
+
+Input Field Highlights/Borders:
+
+Color Choice: Deep Teal (#008080) or Navy Blue (#000080)
+
+Why: When a user clicks into an input field (e.g., for Principal, Rate, or Time), a subtle border or highlight in your primary accent color (deep teal or navy) can provide clear visual feedback about which field is active. This adds to the professional feel.
+
+Result Display Area:
+
+Color Choice: A very subtle background or border using a lighter tint of Deep Teal or Navy Blue, or even a very light Forest Green (#E8F5E9 - a light tint of the original Forest Green if you want more variation).
+
+Why: This area is where the user sees their calculation. A soft, calming color here can make the results feel trustworthy and easy to read. Avoid anything too dark that might make the numbers hard to see.
+
+Toggle Switches or Radio Buttons (if applicable):
+
+Color Choice: Deep Teal (#008080), Navy Blue (#000080), or Forest Green (#228B22) for the "on" state.
+
+Why: If you have options like "Monthly vs. Annually" compounding, using one of these colors for the selected state helps indicate the active choice clearly and consistently within your calm palette.
+
+Minor Informational Elements (e.g., tooltips, small icons):
+
+Color Choice: Any of the chosen "Calm & Professional" colors.
+
+Why: For less critical elements that need to stand out slightly from plain text, these colors can add a touch of sophistication and brand consistency.
+
+General UI Design Tips with Your Palette:
+
+Consistency is Key: Once you pick a color for a specific type of interaction (e.g., Deep Teal for primary actions), stick with it throughout the calculator.
+
+Whitespace: Allow plenty of clean, neutral space around your grey keys and colored accents. This enhances the "calm and professional" feel and improves readability.
+
+Typography: Choose a clean, legible font. Black or very dark grey text will work well on your grey keys. For the colored buttons, ensure the text color (often white or light grey) contrasts well.
+
+Hover/Active States: Don't forget to define subtle hover and active (click) states for your buttons. A slightly darker or lighter shade of the button's base color often works well for these interactions.
+
+Accessibility: Always test your color choices for accessibility, especially contrast. Tools are available online to check if your color combinations meet WCAG (Web Content Accessibility Guidelines) standards, ensuring your calculator is usable for everyone.
+
+By strategically applying these calm and professional colors, your interest calculator will not only be functional but also aesthetically pleasing and trustworthy.
+
+
+
+
+
+
+
+ */

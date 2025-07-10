@@ -1,106 +1,3 @@
-function search() {
-
-    let hikeQuery = document.querySelector('#search').value;
-
-    let filteredRecipe = recipe.filter(function(recipe){
-        return ( 
-            hike.name.toLowerCase().includes(hikeQuery.toLowerCase()) ||
-            hike.description.toLowerCase().includes(hikeQuery.toLowerCase()) || 
-            hike.tags.find(tag => tag.toLowerCase().includes(hikeQuery.toLowerCase()))
-        );
-    })
-
-    console.log(filteredHikes);
-
-    function compareHikes(a,b) {
-    if (a.difficulty < b.difficulty) {
-        return -1;
-    } else if (a.difficulty > b.difficulty) {
-        return 1;
-    }
-    return 0;
-    }
-
-    let sortedHikes = filteredHikes.sort(compareHikes);
-
-    console.log(sortedHikes);
-
-    // clear out any previous content
-    hikeContainer.innerHTML = '';
-    // output onto screen
-    sortedHikes.forEach(function(recipe){
-		renderHike(recipe);
-	})
-
-}
-
-let hikeContainer = document.querySelector('#recipe-container');
-
-let button = document.querySelector('button');
-
-button.addEventListener('click', search);
-
-let randomNum = Math.floor(Math.random() * recipe.length);
-console.log(randomNum);
-
-function tagTemplate(tags) {
-    return tags.map((tag)=> `<button>${tag}</button>`).join(' ');
-}
-
-function difficultyTemplate(rating) {
-		let html = `<span
-	class="rating"
-	role="img"
-	aria-label="Rating: ${rating} out of 5"
-  > Difficulty: `
-    for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        html += `<span aria-hidden="true" class="icon-boot"> 🥾</span>`
-      } else {
-        html += `<span aria-hidden="true" class="icon-empty">▫️</span> `
-      }			
-    }
-    html += `</span>`
-    return html
-  }
-
-function hikesTemplate(recipe) {
-    return `<div class="recipe-card">
-  <div class="recipe-content">
-    <h2>${recipe.name}</h2>
-    <div class="recipe-tags">
-      ${tagTemplate(recipe.tags)}
-    </div>
-    <p>${recipe.description}</p>
-    <p>${difficultyTemplate(recipe.difficulty)}</p>
-  </div>
-</div>`
-}
-
-function renderHike(recipe) {
-    let html = hikesTemplate(recipe);
-    hikeContainer.innerHTML += html
-}
-
-function init() {
-    renderHike(recipe[randomNum]);
-}
-
-init();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const recipes = [
 	{
 		author: 'Provo High Culinary Students',
@@ -381,4 +278,84 @@ const recipes = [
 		recipeYield: '12 servings',
 		rating: 4
 	}
-]
+];
+
+function recipeTemplate(recipe) {
+	return `<article class="recipe-card">
+        <img src="${recipe.image}" alt="${recipe.name}">
+        <div class="recipe-meta">
+          <h2>${recipe.name}</h2>
+    	 ${ratingTemplate(recipe.rating)}
+          <p class="prep-time">${recipe.prepTime}</p>
+          <p class="cook-time">${recipe.cookTime}</p>
+          <p class="description">${recipe.description}</p>
+          <div class="tags">
+           ${tagtemplate(recipe.tags)}
+        </div>
+      </article>`;
+}
+function ratingTemplate(rating) {
+	console.log('rating', rating);
+let html = `<span class="rating" role="img" aria-label="Rating: ${rating} stars out of 5">`
+        for (let i = 1; i <= 5; i++) {
+			if (i <= rating) {
+				console.log('rating', i, rating);
+			html += `<span class="star">⭐</span>`;}
+			else {
+				html += `<span class="star">☆</span>`;}
+}	
+	html += `</span>`;
+	return html;
+
+}
+function tagtemplate(tags) {
+let html = '';
+tags.forEach(tag => {
+	html += `<span class="tag">${tag}</span>`;})
+	return html;
+}
+function renderRecipes(recipes) {
+	const main = document.querySelector('main');
+	const recipemain = recipes.map(recipe => recipeTemplate(recipe)).join('');
+	main.innerHTML = recipemain;
+}
+function getRandomNumber(rn) {
+	return Math.floor(Math.random() * rn);
+}
+function getRandomRecipe (list) {
+	const listlength = list.length;
+	const randomindex = getRandomNumber(listlength);
+	return list[randomindex];
+}
+function filter (query) {
+	const filtered = recipes.filter(recipe => {
+		return recipe.name.toLowerCase().includes(query.toLowerCase()) ||
+			recipe.description.toLowerCase().includes(query.toLowerCase()) ||
+			recipe.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()));
+	});
+	return filtered;
+
+}
+function search (e) {
+	e.preventDefault();
+	const query = document.querySelector('search-input').value.toLowerCase();
+	const filteredRecipes = filter(query);
+	renderRecipes(filteredRecipes);
+}
+
+function init () {
+	console.log('Recipes loaded');
+	const recipe = getRandomRecipe(recipes);
+	renderRecipes([recipe]);
+
+}
+
+init();
+
+
+
+
+
+
+
+
